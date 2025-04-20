@@ -16,6 +16,13 @@ connectDB();
 
 const app = express();
 
+
+import cors from 'cors';
+app.use(cors({
+  origin: 'https://devops-project-rho.vercel.app',
+  credentials: true // if you're sending cookies/auth headers
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
